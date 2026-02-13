@@ -397,3 +397,8 @@ footer {
     color: orange;
     font-weight: bold;
 }
+
+/* Utility Classes */
+.hidden {
+    display: none;
+}

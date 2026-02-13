@@ -26,21 +26,53 @@
 
     <div class="login-container">
         <div class="login-card">
-            <h2>User Login</h2>
-            <form action="dashboard.html">
-                <div class="form-group">
-                    <label for="username">Username</label>
-                    <input type="text" id="username" placeholder="Enter your username" required>
-                </div>
-                <div class="form-group">
-                    <label for="password">Password</label>
-                    <input type="password" id="password" placeholder="Enter your password" required>
-                </div>
-                <button type="submit" class="login-btn">Login to Dashboard</button>
-            </form>
-            <p style="margin-top: 1rem; font-size: 0.9rem;">
-                Don't have an account? <a href="#" style="color: var(--accent-color); font-weight: bold;">Sign up</a>
-            </p>
+            <!-- Login Form -->
+            <div id="login-section">
+                <h2>User Login</h2>
+                <form action="dashboard.html">
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" id="username" placeholder="Enter your username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" placeholder="Enter your password" required>
+                    </div>
+                    <button type="submit" class="login-btn">Login to Dashboard</button>
+                </form>
+                <p style="margin-top: 1rem; font-size: 0.9rem;">
+                    Don't have an account? <a href="#" onclick="toggleForms(); return false;"
+                        style="color: var(--accent-color); font-weight: bold;">Sign up</a>
+                </p>
+            </div>
+
+            <!-- Sign Up Form -->
+            <div id="signup-section" class="hidden">
+                <h2>Create Account</h2>
+                <form action="dashboard.html">
+                    <div class="form-group">
+                        <label for="reg-fullname">Full Name</label>
+                        <input type="text" id="reg-fullname" placeholder="Enter your full name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="reg-email">Email Address</label>
+                        <input type="email" id="reg-email" placeholder="Enter your email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="reg-username">Username</label>
+                        <input type="text" id="reg-username" placeholder="Choose a username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="reg-password">Password</label>
+                        <input type="password" id="reg-password" placeholder="Create a password" required>
+                    </div>
+                    <button type="submit" class="login-btn">Sign Up</button>
+                </form>
+                <p style="margin-top: 1rem; font-size: 0.9rem;">
+                    Already have an account? <a href="#" onclick="toggleForms(); return false;"
+                        style="color: var(--accent-color); font-weight: bold;">Login</a>
+                </p>
+            </div>
         </div>
     </div>
 
@@ -48,6 +80,20 @@
         <p>&copy; 2024 Coffe Adda. All rights reserved.</p>
     </footer>
 
+    <script>
+        function toggleForms() {
+            const loginSection = document.getElementById('login-section');
+            const signupSection = document.getElementById('signup-section');
+
+            if (loginSection.classList.contains('hidden')) {
+                loginSection.classList.remove('hidden');
+                signupSection.classList.add('hidden');
+            } else {
+                loginSection.classList.add('hidden');
+                signupSection.classList.remove('hidden');
+            }
+        }
+    </script>
 </body>
 
 </html>
