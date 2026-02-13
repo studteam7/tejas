@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Dashboard - Coffe Adda</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        // Simple script to display the username from the previous page (just for fun/demo)
+        // In a real app, this would be handled by the backend/session
+        window.onload = function () {
+            const params = new URLSearchParams(window.location.search);
+            const user = params.get('username'); // This won't work with standard generic form submit unless method is GET
+            // Since we can't easily pass data without JS on the login submit or backend,
+            // we will just show a generic message or use a prompt in a real JS app,
+            // but for "CSS/HTML" focus, we'll keep it static.
+        }
+    </script>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">
+            <span class="coffee-icon">☕</span> Coffe Adda
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="index.html" onclick="alert('Logged out successfully!');">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="dashboard-header">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <h1>Welcome back, <span style="text-decoration: underline;">User</span>!</h1>
+            <p>Here is your order history and account overview.</p>
+        </div>
+    </div>
+
+    <section>
+        <h2>Your Recent Orders</h2>
+
+        <table class="order-table">
+            <thead>
+                <tr>
+                    <th>Order ID</th>
+                    <th>Date</th>
+                    <th>Items</th>
+                    <th>Total</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>#CA-1023</td>
+                    <td>Oct 24, 2024</td>
+                    <td>2x Samosa, 1x Masala Chai</td>
+                    <td>₹55</td>
+                    <td class="status-delivered">Delivered</td>
+                </tr>
+                <tr>
+                    <td>#CA-1024</td>
+                    <td>Oct 25, 2024</td>
+                    <td>1x Cold Coffee</td>
+                    <td>₹40</td>
+                    <td class="status-delivered">Delivered</td>
+                </tr>
+                <tr>
+                    <td>#CA-1025</td>
+                    <td>Today</td>
+                    <td>3x Paneer Samosa</td>
+                    <td>₹90</td>
+                    <td class="status-processing">Processing</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div style="margin-top: 2rem; display: flex; gap: 1rem;">
+            <div style="flex: 1; background: white; padding: 2rem; border-radius: 10px; box-shadow: var(--shadow);">
+                <h3 style="color: var(--accent-color);">Account Details</h3>
+                <p><strong>Username:</strong> guest_user_01</p>
+                <p><strong>Email:</strong> guest@coffeadda.com</p>
+                <button class="add-btn" style="margin-top: 1rem; width: auto;">Edit Profile</button>
+            </div>
+            <div style="flex: 1; background: white; padding: 2rem; border-radius: 10px; box-shadow: var(--shadow);">
+                <h3 style="color: var(--accent-color);">Loyalty Points</h3>
+                <p style="font-size: 2rem; font-weight: bold; color: var(--primary-color);">150 pts</p>
+                <p>Redeem for a free coffee!</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Coffe Adda. All rights reserved.</p>
+    </footer>
+
+</body>
+
+</html>
